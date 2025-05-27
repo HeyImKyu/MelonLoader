@@ -19,8 +19,8 @@ buildDotnetModule rec {
     sha256 = "sha256-Y6UUWjpFEoQmQ9gmM93mIqQNhNb5IO+JhipFGTj4E6A=";
   };
 
-  projectFile = "MelonLoader/MelonLoader.csproj";
-  nugetConfig = "NuGet.config";
+  projectFile = "MelonLoader.Bootstrap/MelonLoader.Bootstrap.csproj";
+  nugetConfig = ./NuGet.config;
 
   meta = with lib; {
     homepage = "some_homepage";

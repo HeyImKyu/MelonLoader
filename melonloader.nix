@@ -9,12 +9,12 @@ buildDotnetModule rec {
   version = "0.0.1";
 
   dotnet-sdk = dotnetCorePackages.sdk_6_0;
-  dotnet-runtime = dotnetCorePackages.runtime_6_0;
+  dotnet-runtime = dotnetCorePackages.runtime_8_0;
 
   src = fetchFromGitHub {
     owner = "HeyImKyu";
     repo = "MelonLoader";
-    rev = "b4f01dcd29fd7b8c3239756764056b91048c566b";
+    rev = "54a9574a9bf106b0d1e8cb3ffd26fc0f7605322a";
     sha256 = "sha256-9yIwnYAoRJyFeRfOjQ+6di9Z/iWHaPjMXPa6olj4r6s=";
   };
 

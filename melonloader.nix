@@ -2,6 +2,7 @@
 , fetchFromGitHub
 , lib
 , dotnetCorePackages
+, pkgs
 }:
 
 buildDotnetModule rec {
@@ -9,12 +10,12 @@ buildDotnetModule rec {
   version = "0.0.1";
 
   dotnet-sdk = dotnetCorePackages.sdk_6_0;
-  dotnet-runtime = dotnetCorePackages.runtime_8_0;
+  dotnet-runtime = pkgs.dotnet-runtime_6;
 
   src = fetchFromGitHub {
     owner = "HeyImKyu";
     repo = "MelonLoader";
-    rev = "54a9574a9bf106b0d1e8cb3ffd26fc0f7605322a";
+    rev = "master";
     sha256 = "sha256-9yIwnYAoRJyFeRfOjQ+6di9Z/iWHaPjMXPa6olj4r6s=";
   };
 

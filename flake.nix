@@ -14,15 +14,27 @@
     utils,
     ...
   }:
-    utils.lib.eachDefaultSystem (
-      system: let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in {
-        formatter = pkgs.nixfmt-rfc-style;
-        packages = {
-          default = pkgs.callPackage ./melonloader.nix {};
-        };
-      }
-    );
+  let
+    pkgsConfig = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "dotnet-sdk-6.0.428"
+        "dotnet-runtime-6.0.36"
+      ];
+    };
+  in
+  utils.lib.eachDefaultSystem (system:
+    let
+      pkgs = import nixpkgs {
+        system = system;
+        config = pkgsConfig;
+      };
+    in {
+      formatter = pkgs.nixfmt-rfc-style;
+      packages = {
+        default = pkgs.callPackage ./melonloader.nix {};
+      };
+    }
+  );
 }
 

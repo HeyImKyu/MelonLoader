@@ -9,7 +9,7 @@ buildDotnetModule rec {
   pname = "melonloader";
   version = "0.0.1";
 
-  dotnet-sdk = dotnetCorePackages.sdk_6_0;
+  dotnet-sdk = pkgs.dotnet-sdk_9;
   dotnet-runtime = pkgs.dotnet-runtime_6;
 
   src = fetchFromGitHub {

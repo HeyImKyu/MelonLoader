@@ -20,6 +20,7 @@ buildDotnetModule rec {
   };
 
   projectFile = "MelonLoader/MelonLoader.csproj";
+  nugetConfig = "NuGet.config";
 
   meta = with lib; {
     homepage = "some_homepage";

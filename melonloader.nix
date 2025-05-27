@@ -15,8 +15,8 @@ buildDotnetModule rec {
   src = fetchFromGitHub {
     owner = "HeyImKyu";
     repo = "MelonLoader";
-    rev = "6f453afbabce102230beb5a4b99a07fba004d118";
-    sha256 = "sha256-sun5QaBFG9BedgBRGl61pjGwZrREhmceLQwDe01ziz8=";
+    rev = "6c320b45d43e7a78a9c89be27fb705dc872b531d";
+    sha256 = "sha256-Y6UUWjpFEoQmQ9gmM93mIqQNhNb5IO+JhipFGTj4E6A=";
   };
 
   projectFile = "MelonLoader/MelonLoader.csproj";

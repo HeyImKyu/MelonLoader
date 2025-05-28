@@ -56,7 +56,7 @@
     </ItemGroup>
     
     <ItemGroup>
-        <Compile Include="$(SolutionDir)/MelonLoader/LoaderConfig.cs" />
+        <Compile Include="../MelonLoader/LoaderConfig.cs" />
     </ItemGroup>
 
     <ItemGroup>

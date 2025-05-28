@@ -1,9 +1,12 @@
 { buildDotnetModule
 , fetchFromGitHub
 , lib
-, dotnetCorePackages
 , pkgs
 }:
+
+let
+  importNugetDeps = import ./nuget-deps.nix;
+in
 
 buildDotnetModule rec {
   pname = "melonloader";
@@ -21,6 +24,14 @@ buildDotnetModule rec {
 
   projectFile = "MelonLoader.Bootstrap/MelonLoader.Bootstrap.csproj";
   nugetConfig = ./NuGet.config;
+  nugetDeps = ./nix-deps.json;
+
+  postPatch = ''
+    echo "Bootstrap dir contents:"
+    ls -R MelonLoader.Bootstrap
+    echo "MelonLoader dir contents:"
+    ls -R MelonLoader
+  '';
 
   meta = with lib; {
     homepage = "some_homepage";
